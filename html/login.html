@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="left">
+            <img src="img/logo.jpg" alt="LOGITIM Logo" class="logo">
+            <h1 class="brand-text">
+                <span class="logi">LOGI</span><span class="tim">TIM</span>
+            </h1>
+            <h2>Selamat Datang di <span class="logi">LOGI</span><span class="tim">TIM</span></h2>
+        </div>
+        <div class="right">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label>Username</label>
+                <input type="text" id="username" required />
+
+                <label>Password</label>
+                <input type="password" id="password" required />
+
+                <label for="confirmPassword">Konfirmasi Password</label>
+  <input type="password" id="confirmPassword" required />
+
+                <button type="submit">Login</button>
+                <a href="#">Lupa Password</a>
+
+                <p class="or">Or Via Social Network</p>
+                <div class="social-login">
+                <button type="button" class="social-button facebook">
+                <i class="fab fa-facebook-f"></i> <span>Facebook</span>
+                </button>
+                <button type="button" class="social-button google">
+                <i class="fab fa-google"></i> <span>Google</span>
+                </button>
+
+                </div>
+
+
+                <p class="register">Belum punya akun? <a href="register.html">Daftar</a></p>
+            </form>
+        </div>
+    </div>
+  <script src="js/login.js"></script>
+</body>
+</html>

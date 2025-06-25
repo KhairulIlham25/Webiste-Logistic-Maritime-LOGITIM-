@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil User</title>
+  <link rel="stylesheet" href="css/profil.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/logo.jpg" alt="LOGITIM Logo">
+      LOGI<span>TIM</span>
+    </div>
+    <button class="nav-toggle" id="navToggle">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="login_homepage.html">Beranda</a></li>
+      <li><a href="login_tentang.html">Tentang Kami</a></li>
+      <li><a href="login_layanan.html">Layanan</a></li>
+      <li><a href="lacak.html">Lacak</a></li>
+      <li><a href="login_kontak.html">Kontak</a></li>
+      <li><a href="login_blog.html">Blog</a></li>
+      <li><a href="profil.html" class="active">Profil</a></li>
+      <a href="login.html" class="login-button" id="logoutBtn">Logout</a>
+    </ul>
+  </header>
+
+  <main>
+    <section class="profile-container">
+      <div class="form-group">
+        <img id="previewFoto" src="img/user-avatar.jpeg" alt="Preview Foto" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-top: 10px;" />
+        <input type="file" id="foto" accept="image/*" style="display: none;" onchange="previewFoto(this)" />
+      </div>
+
+      <p class="namanya">Andi Logistic</p>
+      <p class="username">@andi.logistics</p>
+
+      <div class="profile-card">
+        <div class="edit-button-container">
+          <button class="edit-button" onclick="enableEdit()">
+            <i class="fas fa-edit"></i> Edit Profil
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label for="nama">Nama Lengkap:</label>
+          <input type="text" id="nama" class="profile-input" readonly />
+
+          <label for="email">Email:</label>
+          <input type="text" id="email" class="profile-input" readonly />
+
+          <label for="telepon">Nomor Telepon:</label>
+          <input type="text" id="telepon" class="profile-input" readonly />
+
+          <label for="alamat">Alamat:</label>
+          <input type="text" id="alamat" class="profile-input" readonly />
+        </div>
+
+        <div id="edit-actions" style="display: none;">
+          <button onclick="saveProfile()" class="simpan-button">Simpan</button>
+          <button onclick="cancelEdit()" class="batal-button">Batal</button>
+        </div>
+
+        <section class="riwayat-section">
+          <h2>Riwayat Pemesanan Kargo Anda</h2>
+          <div class="riwayat-table-wrapper">
+            <div class="riwayat-table-card">
+              <h3>Pemesanan Terbaru</h3>
+              <div class="riwayat-table-scroll">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID Pemesanan</th>
+                      <th>Tanggal</th>
+                      <th>Status</th>
+                      <th>Asal - Tujuan</th>
+                      <th>Deskripsi Kargo</th>
+                      <th>Layanan</th>
+                      <th>ETA</th>
+                      <th>Biaya</th>
+                      <th>Pengirim / Penerima</th>
+                      <th>Pembayaran</th>
+                      <th>Tracking</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>#KG20240601</td>
+                      <td>01-06-2025</td>
+                      <td class="status diproses">Dalam Proses</td>
+                      <td>Batam - Jakarta</td>
+                      <td>Elektronik (25 kg)</td>
+                      <td>Ekspres</td>
+                      <td>03-06-2025</td>
+                      <td>Rp450.000</td>
+                      <td>Yudi / Andi</td>
+                      <td>Transfer Bank</td>
+                      <td><a href="#">Lacak</a></td>
+                    </tr>
+                    <tr>
+                      <td>#KG20240528</td>
+                      <td>28-05-2025</td>
+                      <td class="status terkirim">Terkirim</td>
+                      <td>Tanjungpinang - Surabaya</td>
+                      <td>Pakaian & Sepatu (15 kg)</td>
+                      <td>Regular</td>
+                      <td>31-05-2025</td>
+                      <td>Rp350.000</td>
+                      <td>Ani / Rudi</td>
+                      <td>Kartu Kredit</td>
+                      <td><a href="#">Lacak</a></td>
+                    </tr>
+                    <tr>
+                      <td>#KG20240525</td>
+                      <td>25-05-2025</td>
+                      <td class="status dibatalkan">Dibatalkan</td>
+                      <td>Medan - Makassar</td>
+                      <td>Suku Cadang (50 kg)</td>
+                      <td>Kontainer FCL</td>
+                      <td>-</td>
+                      <td>Rp1.200.000</td>
+                      <td>Budi / Slamet</td>
+                      <td>QRIS</td>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <button class="logout" onclick="logout()">Logout</button>
+
+      </div>
+  
+  </main>
+
+  <section class="gallery">
+    <img src="img/galery1.jpg" />
+    <img src="img/galery2.jpg" />
+    <img src="img/galery3.jpg" />
+    <img src="img/galery4.jpg" />
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="footer-left-bg">
+          <img src="img/logo.jpg" alt="Logo LOGITIM" />
+          <div class="footer-info">
+            <h3>Kepercayaan</h3>
+            <p>Berkomitmen pada pelayanan terbaik</p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/login.php/"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://x.com/i/flow/login"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.tiktok.com/login"><i class="fab fa-tiktok"></i></a>
+              <a href="https://web.telegram.org/a/"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-right">
+        <h3>Lokasi</h3>
+        <p>PT. LOGITIM</p>
+        <p>Gedung Putih Tugu Pensil lantai 10</p>
+        <p>Jl. Kaca Puri No. 12, Tanjungpinang Barat, Tanjungpinang</p>
+        <p>Phone +6291234567890</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/profil.js"></script>
+</body>
+</html>
