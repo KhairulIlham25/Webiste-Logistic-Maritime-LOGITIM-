@@ -1,0 +1,297 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: #00447B;
+}
+
+.logo span {
+  color: #FF5F25;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #00447B;
+  color: white;
+  border: none;
+  font-size: 30px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #00447B;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #00447B;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.login-button {
+  padding: 8px 16px;
+  border: 2px solid #f15a29;
+  background-color: transparent;
+  color: #f15a29;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.login-button:hover {
+  background-color: #f15a29;
+  color: #00447B;
+}
+
+/* Judul */
+.intro {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.intro h2 {
+  color: #f15a29;
+  margin-bottom: 10px;
+  font-size: 40px;
+  max-width: 100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+}
+
+.intro p {
+  color: #00447B;
+  padding: 20px;
+  font-size: 24px;
+}
+
+/* Artikel */
+#artikel {
+  background-color: #f6faff;
+  padding: 40px 20px;
+}
+
+.artikel-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.artikel-gambar {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.artikel-deskripsi {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #00447B;
+  text-align: justify;
+}
+
+/* Footer Image */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0;
+  width: 97,5vw;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+
+}
+
+/* Footer */
+/* Footer */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  background: #00447B;
+}
+
+.footer-left {
+  flex: 1;
+  position: relative;
+  background: transparent;
+}
+
+.footer-left-bg {
+  background-color: #ffffff;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  clip-path: polygon(0  0, 100% 0, 90% 100%, 0% 100%);
+}
+
+.footer-left img {
+  width: 80px;
+  height: auto;
+}
+
+.footer-info h3 {
+  color: #FF5F25;
+  margin: 0;
+  font-size: 20px;
+}
+
+.footer-info p {
+  color: #00447B;
+  margin: 5px 0 10px 0;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-icons a i {
+  font-size: 18px;
+  color: white;
+  background-color: #00447B;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.footer-right {
+  flex: 1;
+  color: white;
+  padding: 30px;
+}
+
+.footer-right h3 {
+  color: #FF5F25;
+}
+
+.footer-bottom {
+  background-color: #00447B;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+
+}
+
+@media (max-width: 768px) {
+      .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-bottom: 10px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    color: #00447B;
+  }
+
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer-left-bg,
+  .footer-right {
+    clip-path: none;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .footer-left-bg {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .intro h2 {
+    font-size: 26px;
+  }
+
+  .intro p {
+    font-size: 18px;
+    padding: 15px 20px;
+  }
+}
